@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Davis Agaba</Authors>
+    <Description>This product is meant to provider an easy way of comparing Range values. For now the comparision is made for struct values such as ints, doubles, DateTime, etc</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/agabadave/RangeFilter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/agabadave/RangeFilter</RepositoryUrl>
+    <PackageTags>C#, Range, RangeFilter</PackageTags>
+    <PackageReleaseNotes>v1.0.0
+- Initial release</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
