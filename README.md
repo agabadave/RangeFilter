@@ -38,5 +38,24 @@ public IList<Items> GetItems(RangeFilter<DateTime> dateRange)
 }
 ```
 
-## When to use
-RangeFilter can be used on properties that can be queried using a range of values, say from one value to another. The property requires to be of valueType.
+### Validation
+For those interested in having a validaiton on the Range filter, [FluentValidation](https://fluentvalidation.net/) has been used to ensure that the To value is greater than From value.
+
+The validation can be implemented by calling on the RangeFilterValidator method as follows;
+```Csharp
+public IList<Items> GetItems(RangeFilter<DateTime> dateRange)
+{
+    RangeFilterValidator validator = new RangeFilterValidator<DateTime>();
+    FluentValidation.Results.ValidationResult validation = validator.Validate(dateRange);
+
+    if(!validation.IsValid()){
+        //deal with the invalid scenario here
+    }
+    
+    //otherwise continue here
+    DateTime from = dateRange.From;
+    DateTime to = dateRange.To;
+
+    //more code here...
+}
+```
